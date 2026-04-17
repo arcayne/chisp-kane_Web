@@ -1,48 +1,78 @@
-import React from 'react';
-import { Menu, X, Blocks } from 'lucide-react';
+import { useEffect, useState } from 'react';
+
+const LINKS = [
+  { href: '#practice', label: 'Practice', num: '01' },
+  { href: '#method', label: 'Method', num: '02' },
+  { href: '#work', label: 'Work', num: '03' },
+  { href: '#contact', label: 'Contact', num: '04' },
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Blocks className="h-8 w-8 text-indigo-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">Chisp&Kane S.L.</span>
-          </div>
-          
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-gray-700 hover:text-indigo-600 transition-colors">Services</a>
-            <a href="#expertise" className="text-gray-700 hover:text-indigo-600 transition-colors">Expertise</a>
-            <a href="#contact" className="text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
-            <button className="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors">
-              Get Started
-            </button>
-          </div>
+    <header
+      className={`fixed top-0 inset-x-0 z-50 bg-paper/85 backdrop-blur-[2px] transition-colors ${
+        scrolled ? 'border-b border-rule' : 'border-b border-transparent'
+      }`}
+    >
+      <div className="section-pad max-w-[1440px] mx-auto flex items-center justify-between h-14">
+        <a href="#top" className="font-mono text-[0.82rem] tracking-mono-wide text-ink">
+          CHISP<span className="text-ink-3">/</span>KANE
+          <span className="hidden sm:inline text-ink-3 font-normal normal-case"> &nbsp;·&nbsp; S.L.</span>
+        </a>
 
-          <div className="md:hidden flex items-center">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="text-gray-700 hover:text-indigo-600 transition-colors"
-              aria-label="Toggle menu"
+        <nav className="hidden md:flex items-center gap-8">
+          {LINKS.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="group font-mono text-[0.78rem] tracking-mono-wide uppercase text-ink-2 hover:text-ink transition-colors"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
+              <span className="text-ink-3 mr-2">{l.num}</span>
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="md:hidden font-mono text-[0.78rem] tracking-mono-wide uppercase text-ink"
+          aria-expanded={open}
+          aria-label="Toggle menu"
+        >
+          {open ? 'Close' : 'Menu'}
+        </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="#services" className="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition-colors">Services</a>
-            <a href="#expertise" className="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition-colors">Expertise</a>
-            <a href="#contact" className="block px-3 py-2 text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
-          </div>
+      {open && (
+        <div className="md:hidden border-t border-rule bg-paper">
+          <nav className="section-pad max-w-[1440px] mx-auto py-6 flex flex-col gap-4">
+            {LINKS.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="font-display text-2xl text-ink"
+              >
+                <span className="font-mono text-[0.7rem] text-ink-3 align-middle mr-3">
+                  {l.num}
+                </span>
+                {l.label}
+              </a>
+            ))}
+          </nav>
         </div>
       )}
-    </nav>
+    </header>
   );
 }
