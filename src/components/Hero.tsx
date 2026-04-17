@@ -56,21 +56,25 @@ export default function Hero() {
         <div className="col-span-4 md:col-span-3 mt-6 font-mono text-[0.72rem] uppercase tracking-mono-wide text-ink-3">
           — Index
         </div>
-        <dl className="col-span-4 md:col-span-9 mt-6 grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6 font-mono text-[0.78rem] text-ink-2">
+        <dl className="col-span-4 md:col-span-9 mt-6 grid grid-cols-2 md:grid-cols-5 gap-y-4 gap-x-6 font-mono text-[0.78rem] text-ink-2">
           <div>
             <dt className="text-ink-3">01</dt>
             <dd className="mt-1">Practice</dd>
           </div>
           <div>
             <dt className="text-ink-3">02</dt>
-            <dd className="mt-1">Method</dd>
+            <dd className="mt-1">Agentic trading</dd>
           </div>
           <div>
             <dt className="text-ink-3">03</dt>
-            <dd className="mt-1">Selected work</dd>
+            <dd className="mt-1">Method</dd>
           </div>
           <div>
             <dt className="text-ink-3">04</dt>
+            <dd className="mt-1">Selected work</dd>
+          </div>
+          <div>
+            <dt className="text-ink-3">05</dt>
             <dd className="mt-1">Contact</dd>
           </div>
         </dl>

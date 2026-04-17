@@ -109,7 +109,7 @@ export default function Method() {
     >
       <div className="grid-12 mb-14 md:mb-20">
         <div className="col-span-4 md:col-span-2">
-          <div className="eyebrow">§ 02 — Method</div>
+          <div className="eyebrow">§ 03 — Method</div>
         </div>
         <h2 className="col-span-4 md:col-span-9 md:col-start-3 font-display font-normal text-ink text-3xl md:text-5xl leading-[1.05] tracking-display-tight">
           How we work, <span className="italic text-ink-3">end to end.</span>

@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Practice from './components/Services';
+import AgenticTrading from './components/AgenticTrading';
 import Method from './components/Method';
 import SelectedWork from './components/SelectedWork';
 import About from './components/About';
@@ -14,6 +15,7 @@ export default function App() {
       <main>
         <Hero />
         <Practice />
+        <AgenticTrading />
         <Method />
         <SelectedWork />
         <About />
@@ -24,7 +26,7 @@ export default function App() {
         >
           <div className="grid-12">
             <div className="col-span-4 md:col-span-2">
-              <div className="eyebrow">§ 05 — Contact</div>
+              <div className="eyebrow">§ 06 — Contact</div>
             </div>
             <h2 className="col-span-4 md:col-span-9 md:col-start-3 font-display font-normal text-ink text-3xl md:text-5xl leading-[1.05] tracking-display-tight">
               Start a <span className="italic">conversation.</span>

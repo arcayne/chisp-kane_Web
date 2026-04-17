@@ -105,7 +105,7 @@ export default function SelectedWork() {
     <section id="work" className="section-pad max-w-[1440px] mx-auto py-24 md:py-32">
       <div className="grid-12 mb-12 md:mb-16">
         <div className="col-span-4 md:col-span-2">
-          <div className="eyebrow">§ 03 — Selected work</div>
+          <div className="eyebrow">§ 04 — Selected work</div>
         </div>
         <h2 className="col-span-4 md:col-span-9 md:col-start-3 font-display font-normal text-ink text-3xl md:text-5xl leading-[1.05] tracking-display-tight">
           A few recent <span className="italic">engagements.</span>
