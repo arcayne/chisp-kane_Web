@@ -29,7 +29,7 @@ export default function About() {
         className={`grid-12 reveal ${revealed ? 'is-revealed' : ''}`}
       >
         <div className="col-span-4 md:col-span-2">
-          <div className="eyebrow">§ 04 — The firm</div>
+          <div className="eyebrow">§ 06 — The firm</div>
         </div>
 
         <div className="col-span-4 md:col-span-6 md:col-start-3">

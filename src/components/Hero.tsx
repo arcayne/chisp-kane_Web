@@ -71,6 +71,18 @@ export default function Hero() {
           </div>
           <div>
             <dt className="text-ink-3">04</dt>
+            <dd className="mt-1">Engagements</dd>
+          </div>
+          <div>
+            <dt className="text-ink-3">05</dt>
+            <dd className="mt-1">Field notes</dd>
+          </div>
+          <div>
+            <dt className="text-ink-3">06</dt>
+            <dd className="mt-1">The firm</dd>
+          </div>
+          <div>
+            <dt className="text-ink-3">07</dt>
             <dd className="mt-1">Contact</dd>
           </div>
         </dl>

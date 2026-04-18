@@ -4,7 +4,9 @@ const LINKS = [
   { href: '#practice', label: 'Practice', num: '01' },
   { href: '#method', label: 'Method', num: '02' },
   { href: '#work', label: 'Work', num: '03' },
-  { href: '#contact', label: 'Contact', num: '04' },
+  { href: '#engagements', label: 'Engagements', num: '04' },
+  { href: '#notes', label: 'Notes', num: '05' },
+  { href: '#contact', label: 'Contact', num: '07' },
 ];
 
 export default function Navbar() {
@@ -30,7 +32,7 @@ export default function Navbar() {
           <span className="hidden sm:inline text-ink-3 font-normal normal-case"> &nbsp;·&nbsp; S.L.</span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-5 lg:gap-8">
           {LINKS.map((l) => (
             <a
               key={l.href}

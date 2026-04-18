@@ -3,6 +3,8 @@ import Hero from './components/Hero';
 import Practice from './components/Services';
 import Method from './components/Method';
 import SelectedWork from './components/SelectedWork';
+import Engagements from './components/Engagements';
+import FieldNotes from './components/FieldNotes';
 import About from './components/About';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
@@ -16,6 +18,8 @@ export default function App() {
         <Practice />
         <Method />
         <SelectedWork />
+        <Engagements />
+        <FieldNotes />
         <About />
 
         <section
@@ -24,7 +28,7 @@ export default function App() {
         >
           <div className="grid-12">
             <div className="col-span-4 md:col-span-2">
-              <div className="eyebrow">§ 05 — Contact</div>
+              <div className="eyebrow">§ 07 — Contact</div>
             </div>
             <h2 className="col-span-4 md:col-span-9 md:col-start-3 font-display font-normal text-ink text-3xl md:text-5xl leading-[1.05] tracking-display-tight">
               Start a <span className="italic">conversation.</span>
